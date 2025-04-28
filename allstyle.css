@@ -3,6 +3,7 @@ html{
 
     font-family: "ＭＳ Ｐ明朝","ＭＳ Ｐゴシック",serif;
     font-size: 14px;
+    
 
     
     overflow: scroll;
@@ -12,6 +13,26 @@ html{
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+@media screen and (max-width: 768px) {
+    body {
+      font-family: "DotGothic16", sans-serif; /* スマホ共通フォント */
+    }
+  }
+  
+  /* iPhone用 */
+  @media screen and (max-width: 768px) {
+    body.ios {
+      font-family: "DotGothic16", sans-serif;
+    }
+  }
+  
+  /* Android用 */
+  @media screen and (max-width: 768px) {
+    body.android {
+      font-family: "DotGothic16", sans-serif;
+    }
+  }
 
 .border{
     border: solid 1px white;
