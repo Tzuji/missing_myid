@@ -1,0 +1,38 @@
+html{
+    color: white;
+
+    font-family: "ＭＳ Ｐ明朝","ＭＳ Ｐゴシック",serif;
+    font-size: 14px;
+
+    
+    overflow: scroll;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.border{
+    border: solid 1px white;
+    background: black;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+a{
+    position: relative;
+    &:visited{
+        color: white;
+    }
+    &:hover{
+        top: 2px;
+        color: blue;
+        
+    }
+}

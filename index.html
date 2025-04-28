@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="allstyle.css">
+    <link rel="stylesheet" href="mainstyle.css">
+    <title>██区部より</title>
+</head>
+<body id="back">
+    <svg width="0" height="0">
+        <filter id="dither">
+          <feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="1" result="noise"/>
+          <feComposite in="SourceGraphic" in2="noise" operator="arithmetic" k1="3" k2="1" k3="0" k4="0"/>
+        </filter>
+      </svg>
+      
+    <div id="toppage">
+        <span>
+            ██区部より
+        </span>
+        <br><br>
+        <a href="home.html">
+            <img src="images/fac.png" alt="" style="cursor: help;">
+        </a>
+        <br>
+        <span>
+            <br>
+            ▶ PC閲覧推奨<br>
+            ▶ 一次創作を取り扱っています<br>
+            ▶ ゴア表現有<br>
+            <br>
+            作品の無断使用は許可していません<br>
+        </span>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="scripts/Rainy.js"></script>
+</body>
+</html>

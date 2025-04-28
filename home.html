@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="allstyle.css">
+    <link rel="stylesheet" href="mainstyle.css">
+    <title>██区部より</title>
+</head>
+<body id="back">
+    <svg width="0" height="0">
+        <filter id="dither">
+          <feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="2" result="noise"/>
+          <feComposite in="SourceGraphic" in2="noise" operator="arithmetic" k1="3" k2="1" k3="0" k4="0"/>
+        </filter>
+      </svg>
+      
+    <div id="layout">
+        <div class="flex">
+
+            <div class="side">
+                <div class="border">
+                    <div class="space">
+                        <span class="ontouch" onclick="centerChange(0)">top</span><br>
+                        <span class="ontouch" onclick="centerChange(1)">about</span><br>
+                        <span class="ontouch" onclick="centerChange(2)">charactors </span>
+                    </div>
+                    <br>
+                    
+                    <br>
+                </div>
+                <br>
+                <div class="border">
+                    <div class="space">
+                        <a href="index.html" class="ontouch">←</a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="center">
+                    <iframe src="firstPage.html"></iframe>
+            </div>
+        
+            <div class="side">
+                <div class="border">
+                    <div class="space">
+                        本日は<br><br>
+                        <span id="day"></span><br>
+                        <br>です
+                    </div>
+                </div>
+                <br>
+                <div class="border">
+                    <div class="space">
+                        今日の██区部の天気
+                        <br>
+                        <br>
+                        ▶ <span id="weather"></span>
+                        <br>
+                        ▶ 降水確率：
+                        <span id="rainfall"></span>
+                        <br>
+                        <br>
+                        <span id="weatherWar" style="background: black; color: white;">警報なし</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="scripts/changePages.js"></script>
+    <script src="scripts/weather.js"></script>
+    <script src="scripts/UnderWater.js"></script>
+    <section>
+    <div class="noise"></div>
+    </section>
+</body>
+</html>
