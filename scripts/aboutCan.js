@@ -1,7 +1,7 @@
 let mapCanvas = document.getElementById("map"),
     context = mapCanvas.getContext("2d");
 
-const dpr = window.devicePixelRatio || 1;
+const dpr = window.devicePixelRatio || 2;
 
 // 論理サイズ（固定の描画解像度）
 const logicalWidth = 600;
@@ -12,7 +12,6 @@ mapCanvas.width = logicalWidth * dpr;
 mapCanvas.height = logicalHeight * dpr;
 context.scale(dpr, dpr); // スケーリング
 
-// 描画関数（最初の内容）
 function drawMap() {
     context.clearRect(0, 0, logicalWidth, logicalHeight);
     context.fillStyle = "white";
@@ -40,7 +39,6 @@ function drawMap() {
     context.beginPath();
     context.strokeStyle = "#fff";
     context.lineWidth = 1;
-
     // c-7
     context.moveTo(10, 150);
     context.lineTo(160,150)
