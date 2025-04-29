@@ -1,4 +1,3 @@
-
 let mapCanvas = document.getElementById("map"),
     context = mapCanvas.getContext("2d");
 
@@ -77,8 +76,8 @@ function resizeCanvasToFitWindow() {
         newWidth = newHeight * aspect;
     }
 
-    mapCanvas.style.width = newWidth-100 + "px";
-    mapCanvas.style.height = newHeight-100 + "px";
+    mapCanvas.style.width = newWidth-50 + "px";
+    mapCanvas.style.height = newHeight-50 + "px";
     if(mapCanvas.style.height > "500px"){
         mapCanvas.style.width = 600 + "px";
         mapCanvas.style.height = 500 + "px";
