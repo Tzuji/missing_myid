@@ -10,6 +10,5 @@ body{
 
 #map{
     border: solid 1px white;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin: 1em;
 }
