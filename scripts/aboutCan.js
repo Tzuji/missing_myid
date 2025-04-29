@@ -1,48 +1,47 @@
-let mapCanvas = document.getElementById("map"),
-        context = mapCanvas.getContext("2d");
 
+let mapCanvas = document.getElementById("map"),
+    context = mapCanvas.getContext("2d");
+
+const dpr = window.devicePixelRatio || 1;
+
+// 論理サイズ（固定の描画解像度）
+const logicalWidth = 600;
+const logicalHeight = 500;
+
+// 高解像度対応
+mapCanvas.width = logicalWidth * dpr;
+mapCanvas.height = logicalHeight * dpr;
+context.scale(dpr, dpr); // スケーリング
+
+// 描画関数（最初の内容）
+function drawMap() {
+    context.clearRect(0, 0, logicalWidth, logicalHeight);
     context.fillStyle = "white";
     context.font = "14px ＭＳ Ｐ明朝";
-
     context.textAlign = "right";
-    let A5x = 320;
-    context.fillText("A-5区", A5x, 240);
-    context.fillText("安定率:98%", A5x, 260);
 
-    context.textAlign = "right";
-    let B3x = 400;
-    context.fillText("B-3区", B3x, 60);
-    context.fillText("安定率:36%", B3x, 80);
+    context.fillText("A-5区", 320, 240);
+    context.fillText("安定率:98%", 320, 260);
 
-    context.textAlign = "right";
-    let C7x = 80;
-    context.fillText("c-7区", C7x, 40);
-    context.fillText("安定率:13%", C7x, 60);
+    context.fillText("B-3区", 400, 60);
+    context.fillText("安定率:36%", 400, 80);
 
-    context.textAlign = "right";
-    let D9x = 270;
-    context.fillText("D-8区", D9x, 450);
-    context.fillText("安定率:13%", D9x, 470);
+    context.fillText("c-7区", 80, 40);
+    context.fillText("安定率:13%", 80, 60);
 
-    context.textAlign = "right";
-    let E1x = 100;
-    context.fillText("E-1区", E1x, 240);
-    context.fillText("安定率:49%", E1x, 260);
+    context.fillText("D-8区", 270, 450);
+    context.fillText("安定率:13%", 270, 470);
 
-    context.textAlign = "right";
-    let F2x = 590;
-    context.fillText("F-2区", F2x, 300);
-    context.fillText("安定率:78%", F2x, 320);        
+    context.fillText("E-1区", 100, 240);
+    context.fillText("安定率:49%", 100, 260);
 
-    context.strokeStyle = '#fff';
-    context.lineWidth = 1;
-
-window.onload = function(){
-    
+    context.fillText("F-2区", 590, 300);
+    context.fillText("安定率:78%", 590, 320);        
 
     context.beginPath();
     context.strokeStyle = "#fff";
     context.lineWidth = 1;
+
     // c-7
     context.moveTo(10, 150);
     context.lineTo(160,150)
@@ -61,8 +60,33 @@ window.onload = function(){
     context.lineTo(510,160);
     context.lineTo(590,200);
 
-
     context.stroke();
-
-    
 }
+
+// リサイズ処理：CSSで表示サイズを調整
+function resizeCanvasToFitWindow() {
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    const aspect = logicalWidth / logicalHeight;
+    let newWidth = windowWidth;
+    let newHeight = windowWidth / aspect;
+
+    if (newHeight > windowHeight) {
+        newHeight = windowHeight;
+        newWidth = newHeight * aspect;
+    }
+
+    mapCanvas.style.width = newWidth-100 + "px";
+    mapCanvas.style.height = newHeight-100 + "px";
+    if(mapCanvas.style.height > "500px"){
+        mapCanvas.style.width = 600 + "px";
+        mapCanvas.style.height = 500 + "px";
+    }
+}
+
+window.addEventListener("resize", resizeCanvasToFitWindow);
+window.addEventListener("load", () => {
+    drawMap();
+    resizeCanvasToFitWindow();
+});
